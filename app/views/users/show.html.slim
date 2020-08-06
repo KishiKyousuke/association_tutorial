@@ -13,3 +13,8 @@ p
   p
     span ツイート内容:
     = link_to tweet.body, tweet_path(tweet.id)
+- @favorite_tweets.each do |tweet|
+  hr
+  p
+    span ファボツイート内容:
+    = link_to tweet.body, tweet_path(tweet.id)
