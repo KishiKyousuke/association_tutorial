@@ -1,0 +1,9 @@
+h1 Tweet#index
+p Find me in app/views/tweets/new.html.slim
+
+= form_for @tweet do |f|
+  p
+    = f.label :body, "ツイート"
+    = f.text_field :body
+  = f.submit
+
