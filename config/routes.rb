@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'tweets/index'
+  get 'tweets/show'
+  get 'tweets/create'
   get 'users/index'
   get 'users/show'
   devise_for :users
