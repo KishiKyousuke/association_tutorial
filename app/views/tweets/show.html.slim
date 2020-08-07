@@ -9,3 +9,12 @@ p
 p
   span ツイート内容:
   = @tweet.body
+= link_to "コメントする", new_tweet_comment_path(params[:id])
+
+- @comments.each do |comment|
+  hr
+  p
+    = comment.body
+    br
+    = link_to "詳細",tweet_comment_path(params[:id], comment.id)
+

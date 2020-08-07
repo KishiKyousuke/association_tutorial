@@ -1,0 +1,9 @@
+h1 コメント作成
+
+= form_with url: tweet_comments_path, model: [@tweet, @comment] do |f|
+  div class="field"
+    = f.label :body, "コメント内容"
+    br
+    = f.text_area :body
+    br
+    = f.submit
