@@ -8,6 +8,15 @@ p
   span email:
   = @user.email
 
+p = link_to "フォロー", follows_user_path(@user.id)
+p = link_to "フォロワー", followers_user_path(@user.id)
+
+- if current_user != @user
+  - if @user.followed_by?(current_user)
+    p = link_to "フォロー済み", user_relationships_path(@user.id), method: :delete
+  - else
+    p = link_to "フォローする", user_relationships_path(@user.id), method: :post
+
 - @tweets.each do |tweet|
   hr
   p
